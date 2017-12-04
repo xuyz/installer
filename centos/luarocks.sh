@@ -1,0 +1,11 @@
+#!/bin/sh
+
+yum -y install unzip
+yum -y install lua lua-devel
+
+wget http://luarocks.github.io/luarocks/releases/luarocks-2.4.3.tar.gz
+tar -zxvf luarocks-2.4.3.tar.gz
+cd luarocks-2.4.3
+./configure --with-lua-include=/usr/include/
+make build
+make install
