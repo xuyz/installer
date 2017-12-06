@@ -1,5 +1,6 @@
 #!/bin/sh
 
+yum -y install make
 yum -y install unzip
 yum -y install wget
 yum -y install lua lua-devel
