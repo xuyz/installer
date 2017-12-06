@@ -5,6 +5,7 @@
 * [x] Elasticsearch
 * [x] Kibana
 * [x] supervisor
-* [x] luarocks.sh
-* [x] mariadb.sh
-* [x] redis.sh
+* [x] luarocks
+* [x] mariadb
+* [x] redis
+* [x] openresty
