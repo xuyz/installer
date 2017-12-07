@@ -11,3 +11,6 @@ cd luarocks-2.4.3
 ./configure --with-lua-include=/usr/include/
 make build
 make install
+
+cd ..
+rm -rf luarocks-2.4.3 luarocks-2.4.3.tar.gz
