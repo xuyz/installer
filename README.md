@@ -9,3 +9,4 @@
 * [x] mariadb
 * [x] redis
 * [x] openresty
+* [x] pyresttest
