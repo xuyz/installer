@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+wget http://mirrors.163.com/.help/CentOS7-Base-163.repo -P /etc/yum.repos.d/
+
+yum clean all
+yum makecache
