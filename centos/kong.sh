@@ -37,6 +37,8 @@ then
 
     /usr/pgsql-9.6/bin/postgresql96-setup initdb
     systemctl enable postgresql-9.6
+    sed -i 's/^local.*all.*all.*peer/local all all trust/g' /var/lib/pgsql/9.6/data/pg_hba.conf
+    sed -i 's/^host.*all.*all.*127.0.0.1\/32.*ident/host all all 127.0.0.1\/32  trust/g' /var/lib/pgsql/9.6/data/pg_hba.conf
     systemctl start postgresql-9.6
 fi
 
@@ -56,5 +58,7 @@ luarocks install kong-plugin-debug
 luarocks install kong-plugin-param-transformer
 
 sed -i '/#custom_plugins =/i\custom_plugins = key-secret, pipeline, token-agent, extend-headers, debug, param-transformer' /etc/kong/kong.conf
+sed -i '/#admin_listen =/i\admin_listen = 0.0.0.0:8001' /etc/kong/kong.conf
 
-
+kong migrations up
+kong start
