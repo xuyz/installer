@@ -1,5 +1,8 @@
 #!/bin/sh
 
+yum -y install yum-utils --downloadonly --downloaddir=utils
+yum -y install epel-release --downloadonly --downloaddir=utils
+
 ### download depends
 # openresty
 yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
