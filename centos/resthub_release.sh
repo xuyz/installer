@@ -12,11 +12,6 @@ cd $CURDIR
 cd epel
 yum -y install *.rpm
 
-# openresty
-cd $CURDIR
-cd openresty
-yum -y install *.rpm
-
 # postgresql
 cd $CURDIR
 cd postgresql
@@ -37,10 +32,14 @@ cd $CURDIR
 cd kong
 yum -y install *.rpm
 
+cp /etc/kong/kong.conf.default /etc/kong/kong.conf
 sed -i ~/.bash_profile -e "/export PATH/d"
 echo "PATH=$PATH:/usr/local/openresty/bin/:/usr/local/openresty/nginx/sbin" >> ~/.bash_profile
 echo "export PATH" >> ~/.bash_profile
-echo "ulimit -n 8192" >>  ~/.bash_profile
+echo "ulimit -n 4096" >>  ~/.bash_profile
 source ~/.bash_profile
 
+ulimit -n 4096
+kong migrations up
+kong start
 

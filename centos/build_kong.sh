@@ -7,11 +7,6 @@ yum -y install yum-utils --downloadonly --downloaddir=utils
 # epel
 yum -y install epel-release --downloadonly --downloaddir=epel
 
-# openresty
-yum -y install yum-utils
-yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
-yum -y install openresty --downloadonly --downloaddir=openresty
-
 # kong
 wget https://bintray.com/kong/kong-community-edition-rpm/rpm -O /etc/yum.repos.d/bintray-kong-kong-community-edition-rpm.repo
 yum install epel-release --downloadonly --downloaddir=kong
