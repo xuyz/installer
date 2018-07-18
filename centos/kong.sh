@@ -17,8 +17,8 @@ luarocks install lua-llthreads2
 command -v kong
 if test $? -ne 0
 then
-    wget https://bintray.com/kong/kong-community-edition-rpm/rpm -O /etc/yum.repos.d/bintray-kong-kong-community-edition-rpm.repo
-    yum -y install kong-community-edition
+    wget http://p0zmjm8a8.bkt.clouddn.com/kong-community-edition-0.12.3.el7.noarch.rpm
+    yum -y install kong-community-edition-0.12.3.el7.noarch.rpm
 fi
 cp /etc/kong/kong.conf.default /etc/kong/kong.conf
 
